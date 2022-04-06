@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Spotify.Interfaces
 {
-    public interface IPlayer
+    public interface IPlayable
     {
 
     }
