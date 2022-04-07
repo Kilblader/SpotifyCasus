@@ -8,6 +8,9 @@ namespace Spotify.Classes
 {
     public class User
     {
+        public string Name;
 
+        public int UserId { get; set; }
+        public string name { get { return Name; } set { Name = value; }}
     }
 }
