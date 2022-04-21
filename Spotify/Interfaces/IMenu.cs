@@ -4,7 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Friendlist
+public interface IMenu
 {
+    void Show();
 
+    void Run(User user);
+
+    void Clear();
 }

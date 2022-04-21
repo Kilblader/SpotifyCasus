@@ -4,13 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spotify
+internal class Program
 {
-    internal class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        User rick = new User("Rick", true);
+
+        MenuHome startmenu = new MenuHome();
+
+        while (true)
         {
-            Console.WriteLine("Hello World!");
+            startmenu.Run(rick);
         }
+
+
+
     }
 }

@@ -4,14 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spotify.Classes
+public class Playlist
 {
-    public class Playlist
+    public string playlistName;
+    public List<Song> songs;
+
+    public int PlaylistId { get; set; }
+
+    public string PlaylistName { get; set; }
+
+    public Playlist(string name)
     {
-        public string Name;
+        this.songs = new List<Song>();
+        this.PlaylistName = name;
+    }
 
-        public int PlaylistId { get; set; }
+    public override string ToString()
+    {
+        return $"{this.PlaylistName}";
+    }
 
-        public string PlaylistName { get {return Name ; } set{ value = Name; }
+    public void AddSong(Song song)
+    {
+        songs.Add(song);
     }
 }
