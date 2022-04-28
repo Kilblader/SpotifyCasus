@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "sq/qS0+5DD8ZVQoW8vngB4CNY8yUCFDoZs5cgAvY2CGRqk8Mek1LOYx40/YbKSVp6cDjYoeBhz+lAszw4Ntzvw==",
+  "dgSpecHash": "1w6Vlpb1MLmxW+iXYlRmLabxVhsNgQWGNqantLxNqx5UJMgkWyQSRVrX4GzZqRkYySXG/fw27mSYI5JECEWJdg==",
   "success": true,
   "projectFilePath": "C:\\Users\\blade\\OneDrive\\Workspace2022\\Spotify\\Spotify\\Spotify.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\blade\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512",
+    "C:\\Users\\blade\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\blade\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\blade\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

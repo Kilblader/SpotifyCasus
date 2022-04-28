@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 public class ShowMusic : IMenu
 {
     private User __user;
-
-
-    public void Show()
+    public void Run(User user)
     {
+        this.__user = user;
+        Show();
+        menuChoice();
+    }
+    
+    public void Show(Song song = null)
+    {
+        if (song != null) Console.WriteLine(song.ToString());
         Console.WriteLine("");
         Console.WriteLine($"Music\n" +
             $" 1 - Show music\n" +
@@ -23,12 +29,6 @@ public class ShowMusic : IMenu
         Console.Clear();
     }
 
-    public void Run(User user)
-    {
-        this.__user = user;
-        Show();
-        menuChoice();
-    }
 
     public void menuChoice()
     {
@@ -36,19 +36,31 @@ public class ShowMusic : IMenu
         switch (__user.IntInput())
         {
             case 1:
-                //PlaylistCreate();
+                MusicShow();
                 break;
             case 2:
-                //PlaylistShow();
+                
                 break;
             case 3:
-                //PlaylistEdit();
+                
                 break;
             case 4:
                 return;
         }
 
         Run(__user);
+    }
+
+    public void MusicShow()
+    {
+        for (int i = 0; i < __user.playlists.Count; i++)
+        {
+            Console.WriteLine(__user.playlists[i]);
+            foreach (Song s in __user.playlists[__user.IntInput() - 1].songs)
+            {
+                Console.WriteLine($"{s.Name}, {s.artist}");
+            }
+        }
     }
 
 }

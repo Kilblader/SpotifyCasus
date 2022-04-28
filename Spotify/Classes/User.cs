@@ -61,7 +61,7 @@ public class User
     {
         Random rand = new Random();
         curpl = rand.Next(playlists.Count);
-        cursong = rand.Next(playlists[curpl - 1].songs.Count);
+        cursong = rand.Next(playlists[curpl].songs.Count);
         Console.WriteLine(playlists[curpl].songs[cursong].ToString());
         return playlists[curpl].songs[cursong];
     }

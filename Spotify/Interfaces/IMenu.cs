@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public interface IMenu
 {
-    void Show();
+    void Show(Song song);
 
     void Run(User user);
 

@@ -8,8 +8,9 @@ public class MenuFriendlist : IMenu
 {
     private User __user;
 
-    public void Show()
+    public void Show(Song song = null)
     {
+        if (song != null) Console.WriteLine(song.ToString());
         Console.WriteLine("");
         Console.WriteLine($"Friendlist\n" +
             $"1 - View Friendlist\n" +
@@ -25,6 +26,7 @@ public class MenuFriendlist : IMenu
     public void Run(User user)
     {
         this.__user = user;
+        Clear();
         Show();
         menuChoice();
     }
@@ -53,7 +55,7 @@ public class MenuFriendlist : IMenu
 
     private void FriendlistShow()
     {
-
+        
     }
 
     private void FriendlistAdd()

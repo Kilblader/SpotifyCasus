@@ -12,26 +12,26 @@ public class MenuHome : IMenu
     private User __user;
     private Song song;
 
-    public void Show()
+    public void Run(User user)
+    {
+        this.__user = user;
+        Clear();
+        Show(this.song);
+        menuChoice();
+    }
+
+    public void Show(Song song)
     {
         if (song != null) Console.WriteLine(song.ToString());
         Console.WriteLine("");
         Console.WriteLine($"Home\n" +
             $" 1 - Playlists\n" +
-            $" 2 - Friendlists\n" +
-            $" 3 - Show music\n" +
+            $" 2 - Friendlists\n" + // WiP
+            $" 3 - Show music\n" + // WiP
             $" 4 - Play random song\n" +
             $" 5 - Stop music\n" +
             $" 6 - Next song\n");
 
-    }
-
-    public void Run(User user)
-    {
-        this.__user = user;
-        Clear();
-        Show();
-        menuChoice();
     }
 
     public void menuChoice()
@@ -40,13 +40,13 @@ public class MenuHome : IMenu
         switch (__user.IntInput())
         {
             case 1:
-                Change(plm);
+                Change(plm,this.song);
                 break;
             case 2:
-                Change(flm);
+                Change(flm, this.song);
                 break;
             case 3:
-                Change(shm);
+                Change(shm, this.song);
                 break;
             case 4:
                song = __user.PlayRandom();
@@ -60,9 +60,10 @@ public class MenuHome : IMenu
         }
     }
 
-    private void Change(IMenu obj)
+    private void Change(IMenu obj, Song song)
     {
         obj.Clear();
+        obj.Show(this.song);
         obj.Run(__user);
     }
 

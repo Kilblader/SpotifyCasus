@@ -7,31 +7,33 @@ using System.Threading.Tasks;
 public class MenuPlaylist : IMenu
 {
     private User __user;
-    private bool editPL, editSong, created = false;
+    private bool editPL, editSong, created, content = false;
 
-    public void Show()
+    public void Run(User user)
     {
+        this.__user = user;
+        Clear();
+        Show();
+        menuChoice();
+    }
+
+    public void Show(Song song = null)
+    {
+        if (song != null) Console.WriteLine(song.ToString());
         if (created) Console.WriteLine("New playlist made");
         Console.WriteLine("");
         Console.WriteLine($"Playlist\n" +
             $" 1 - Create Playlist\n" +
-            $" 2 - Show Playlists\n" +
-            $" 3 - Edit Playlists\n" +
-            $" 4 - Show Playlist content\n" +
-            $" 5 - Add music to playlist\n" +
-            $" 6 - Home\n");
+            $" 2 - Edit Playlists\n" +
+            $" 3 - Show Playlist content\n" +
+            $" 4 - Add music to playlist\n" +
+            $" 5 - Home\n");
 
     }
 
     public void Clear()
     {
         Console.Clear();
-    }
-    public void Run(User user)
-    {
-        this.__user = user;
-        Show();
-        menuChoice();
     }
 
 
@@ -45,18 +47,15 @@ public class MenuPlaylist : IMenu
                 PlaylistCreate();
                 break;
             case 2:
-                PlaylistShow();
-                break;
-            case 3:
                 PlaylistEdit();
                 break;
-            case 4:
+            case 3:
                 PlaylistContent();
                 break;
-            case 5:
+            case 4:
                 PlaylistAdd();
                 break;
-            case 6:
+            case 5:
                 return;
                 
 
@@ -153,25 +152,28 @@ public class MenuPlaylist : IMenu
 
     private void PlaylistContent()
     {
+        content = true;
         PlaylistShow();
-        Console.WriteLine("Which playlist do you want to view?");
         Console.WriteLine("");
 
-        while (true)
+        while (content == true)
         {
             try
             {
+                Console.WriteLine("Which playlist do you want to view?");
                 foreach (Song s in __user.playlists[__user.IntInput() - 1].songs)
                 {
-                    Console.WriteLine(s.Name);
+                    Console.WriteLine($"{s.Name}, {s.artist}");
                 }
-            }catch (Exception ex)
+                Console.WriteLine("");
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message.Substring(0, 24));
                 Console.WriteLine("");
+                return;
             }
         }
-        return;
-
+        
     }
 }
