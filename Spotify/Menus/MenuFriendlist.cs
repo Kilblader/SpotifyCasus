@@ -33,6 +33,7 @@ public class MenuFriendlist : IMenu
 
     public void menuChoice()
     {
+        Console.WriteLine("Input: ");
         switch (__user.IntInput())
         {
             case 1:
