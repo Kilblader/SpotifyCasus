@@ -163,7 +163,7 @@ public class MenuPlaylist : IMenu
                 Console.WriteLine("Which playlist do you want to view?");
                 foreach (Song s in __user.playlists[__user.IntInput() - 1].songs)
                 {
-                    Console.WriteLine($"{s.Name}, {s.artist}");
+                    Console.WriteLine($"{s.Name}, {s.Artist}");
                 }
                 Console.WriteLine("");
             }

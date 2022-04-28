@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 public class MenuFriendlist : IMenu
 {
     private User __user;
+    private Friendlist __friendlist;
 
     public void Show(Song song = null)
     {
@@ -37,13 +38,13 @@ public class MenuFriendlist : IMenu
         switch (__user.IntInput())
         {
             case 1:
-                FriendlistShow();
+                __friendlist.FriendlistShow();
                 break;
             case 2:
-                FriendlistAdd();
+                __friendlist.FriendlistAdd();
                 break;
             case 3:
-                FriendlistRemove();
+                __friendlist.FriendlistRemove();
                 break;
             case 4:
                 return;
@@ -54,19 +55,5 @@ public class MenuFriendlist : IMenu
         Run(__user);
     }
 
-    private void FriendlistShow()
-    {
-        
-    }
-
-    private void FriendlistAdd()
-    {
-
-    }
-
-    private void FriendlistRemove()
-    {
-
-    }
 
 }

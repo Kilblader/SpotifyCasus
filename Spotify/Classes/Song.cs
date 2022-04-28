@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 public class Song
 {
     private string name;
-    public string artist;
-    public int duration;
-    public string genre;
+    private string artist;
+    private int duration;
+    private string genre;
 
     public string Name { get { return name; } set { name = value; } }
     public string Artist { get { return artist; } set { artist = value; } }

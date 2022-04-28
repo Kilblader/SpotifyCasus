@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 public class Album
 {
-    public string title;
-    public string artist;
-    public int releaseYear;
-    public List<Song> albumsongs;
+    private string title;
+    private string artist;
+    private int releaseYear;
+    private List<Song> albumsongs;
 
     public string Title { get { return title; } set { title = value; } }
     public string Artist { get { return artist; } set { artist = value; } }
