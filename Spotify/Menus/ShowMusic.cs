@@ -58,7 +58,7 @@ public class ShowMusic : IMenu
             Console.WriteLine(__user.playlists[i]);
             foreach (Song s in __user.playlists[__user.IntInput() - 1].songs)
             {
-                Console.WriteLine($"{s.Name}, {s.artist}");
+                Console.WriteLine($"{s.Name}, {s.Artist}");
             }
         }
     }

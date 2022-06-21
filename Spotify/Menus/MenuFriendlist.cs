@@ -7,7 +7,15 @@ using System.Threading.Tasks;
 public class MenuFriendlist : IMenu
 {
     private User __user;
-    private Friendlist __friendlist;
+    private List<User> users = new List<User>();
+
+    public void Run(User user)
+    {
+        this.__user = user;
+        Clear();
+        Show();
+        menuChoice();
+    }
 
     public void Show(Song song = null)
     {
@@ -24,13 +32,6 @@ public class MenuFriendlist : IMenu
         Console.Clear();
     }
 
-    public void Run(User user)
-    {
-        this.__user = user;
-        Clear();
-        Show();
-        menuChoice();
-    }
 
     public void menuChoice()
     {
@@ -38,13 +39,13 @@ public class MenuFriendlist : IMenu
         switch (__user.IntInput())
         {
             case 1:
-                __friendlist.FriendlistShow();
+                FriendlistShow();
                 break;
             case 2:
-                __friendlist.FriendlistAdd();
+                FriendlistAdd();
                 break;
             case 3:
-                __friendlist.FriendlistRemove();
+                FriendlistRemove();
                 break;
             case 4:
                 return;
@@ -55,5 +56,24 @@ public class MenuFriendlist : IMenu
         Run(__user);
     }
 
+    public void FriendlistShow()
+    {
+        Console.WriteLine("This feature is still in development. Press enter to continue.");
+        string x = Console.ReadLine();
+        if (x == null || x != null) return;
+    }
 
+    public void FriendlistAdd()
+    {
+        Console.WriteLine("This feature is still in development. Press enter to continue.");
+        string x = Console.ReadLine();
+        if (x == null || x != null) return;
+    }
+
+    public void FriendlistRemove()
+    {
+        Console.WriteLine("This feature is still in development. Press enter to continue.");
+        string x = Console.ReadLine();
+        if (x == null || x != null) return;
+    }
 }

@@ -40,7 +40,7 @@ public class MenuHome : IMenu
         switch (__user.IntInput())
         {
             case 1:
-                Change(plm,this.song);
+                Change(plm, this.song);
                 break;
             case 2:
                 Change(flm, this.song);
